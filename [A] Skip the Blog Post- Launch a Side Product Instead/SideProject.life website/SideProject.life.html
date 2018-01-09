@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="SideProject.life_files/ga.js"></script><script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="SideProject.life_files/pre_tumblelog.js"></script>
+
+<!--
+
+Observer Theme
+By Zack Sultan
+Released January 2013
+Revised June 25, 2017
+
+-->
+
+
+    
+        <title>SideProject.life</title>
+        <style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar/sphere_closed_128.png">
+        <link rel="alternate" type="application/rss+xml" href="http://sideproject.life/rss">
+        
+            <meta name="description" content="Stay up to date learning all the techniques to growing sales with side projects.">
+        
+        <link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar/sphere_closed_128.png">
+        <link rel="alternate" type="application/rss+xml" href="http://sideproject.life/rss">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+
+
+
+<!-- Options -->
+
+
+        <meta name="if:Show Navigation" content="1">
+        <meta name="if:Alternate Header Layout" content="0">
+        <meta name="if:Show Description" content="0">
+        <meta name="if:Show Archive Navigation Link" content="1">
+        <meta name="if:Wide Images" content="1">
+        <meta name="if:Photoset Layout" content="0">
+        <meta name="if:Show Post Tags" content="1">
+        <meta name="if:Show Post Notes" content="1">
+        <meta name="if:Show Copyright" content="0">
+
+        <meta name="Title font" content="Gibson">
+        <meta name="Title font weight" content="bold" title="Bold">
+        <meta name="Title font weight" content="normal" title="Normal">
+        <meta name="font:Body font" content="Calluna">
+
+        <meta name="Background color" content="#fff">
+        <meta name="Title color" content="#444444">
+        <meta name="Link color" content="#5f79a4">
+
+        <meta name="color:Body text" content="#333333">
+		<meta name="color:Secondary text" content="#888888">
+        <meta name="image:Logo" content="">
+        <meta name="text:TypeKit ID" content="">
+        <meta name="text:Title Font" content="">
+        <meta name="text:Body Font" content="">
+        <meta name="text:Post Headline Font" content="">
+        <!--<meta name="text:Secondary Font" content=""/>-->
+
+        <meta name="text:Disqus Shortname" content="">
+        <meta name="text:Google Analytics" content="">
+
+<!-- Scripts -->
+
+    <script src="SideProject.life_files/jquery-1.js"></script>
+
+    
+
+    <!-- Media resizing -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Make desktop tumblr video stretch to 100%
+            $('.tumblr_video_container').css({ 'width' : '100%', 'height' : '100%' });
+            // Resize tumblr video on mobile
+            $('.iphone-video a').css({ 'width' : '100%', 'height' : '200px' });
+		});
+
+        //Make Spotify the right size and responsive
+	    $(document).ready(function(){
+	        $('.mobile-spotify iframe').css('height', '80px');
+            $('.mobile-spotify iframe').css('width', '290px');
+            $('iframe[src*="embed.spotify.com"]').each( function() {
+                $(this).css('width',$(this).parent(1).css('width'));
+                $(this).css('height', '82');
+                $(this).attr('src',$(this).attr('src'));
+            });
+        });
+        $(window).resize(function() {
+            $('iframe[src*="embed.spotify.com"]').each( function() {
+                $(this).css('width',$(this).parent(1).css('width'));
+                $(this).css('height', '82');
+                $(this).attr('src',$(this).attr('src'));
+            });
+        });
+
+        // Fix Flickr images treated as videos.
+        $(document).ready(function(){
+          // Grab the videoWrappers that are already here.
+          var videoWrappers = document.querySelectorAll('.videoWrapper');
+          for(var i = 0, len = videoWrappers.length; i < len; i++) {
+              fixFlickr(videoWrappers[i]);
+          }
+
+          // Also process any new nodes that are added to the page.
+          var observer,
+          observerConfig = {
+          	childList: true,
+          	subtree: true
+          };
+
+          observer = new MutationObserver(function (mutations) {
+          	for (var i = 0, len = mutations.length; i < len; i++) {
+          		// If there were new nodes added, we check that they are valid flickr embeds
+          		if (mutations[i].addedNodes.length && mutations[i].addedNodes[0].querySelector) {
+          		    var newVideoWrapper = mutations[i].addedNodes[0].querySelector('.videoWrapper');
+          			if (newVideoWrapper !== null) {
+          				fixFlickr(newVideoWrapper);
+          			}
+          		}
+          	}
+          });
+
+          observer.observe(document.getElementById('content'), observerConfig);
+        });
+
+        function fixFlickr(videoWrapper){
+          var potentialEmbed = videoWrapper.firstElementChild;
+          if(potentialEmbed.hasAttribute('data-flickr-embed')) {
+              videoWrapper.style.paddingBottom = 0;
+              videoWrapper.style.height = 'auto';
+          }
+        }
+
+        //disable safari active states
+        document.addEventListener("touchstart", function() {},false);
+
+	</script>
+
+
+<!-- Analytics -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-72781176-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+<!-- Style Sheet -->
+
+<style type="text/css">
+
+.regular p {
+	font-weight: bold;
+	color:aqua;
+}
+
+.regular .bottom-nav {
+	display: none;
+}
+
+::selection {
+    background: #529ECC; /* Safari */
+	color: #222222;
+	}
+
+::-moz-selection {
+	background: #529ECC; /* Firefox */
+	color: #222222;
+}
+
+body {
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+    font-size:18px;
+	-webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+
+p, li, blockquote {
+	line-height: 28px;
+	margin: 0;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 30px;
+}
+
+.ir {
+	text-indent: -99999em;
+}
+
+.center {
+	text-align: center;
+}
+
+/* Global colors
+********************************/
+
+body {
+	color: #222222;
+	background-color: #FAFAFA;
+}
+
+.blog-description {
+	color: #888888;
+}
+
+a {
+	color: #222222;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(136, 136, 136, 0.3);
+}
+
+#header h1 a {
+	color: #444444;
+	border-bottom: none;
+}
+
+a:hover {
+}
+
+a:active {
+	position: relative;
+	outline: none;
+	top: 1px;
+}
+
+
+.metadata a, #footer-links a, #footer p.promo a, .links a {
+	color: #888888;
+	border-bottom: none;
+}
+
+.metadata a:hover, #footer-links a:hover, #footer p.promo a:hover, .links a:hover, .more a:hover, a.mobile-player:hover {
+
+}
+
+.post {
+	border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+}
+
+.colophon p {
+	color: #888888;
+}
+
+
+/* Global fonts
+********************************/
+
+body {
+	font-family:  'Calluna', serif, georgia, serif;
+	font-weight: normal;
+}
+
+.title h1, .link-title h1, .chat-title h1, .q h1, .a h1, .album-info h2, #footer h2 {
+	font-family:  'Gibson', sans-serif, georgia, serif;
+	font-weight: bold;
+}
+
+.blog-title h1 {
+	font-family:  'Gibson', sans-serif, futura, helvetica, arial, sans-serif;
+	font-weight: bold;
+	font-size: 96px;
+	line-height: 1em;
+}
+
+.metadata a {
+	font-family:  , helvetica, arial, sans-serif;
+	font-weight: normal;
+}
+
+
+/* Page
+********************************/
+
+
+#page {
+	border: 0px solid;
+	max-width: 900px;
+	padding-left:  50px;
+	padding-right: 50px;
+	margin: auto;
+}
+
+
+
+
+
+
+
+
+/* Header Centered
+********************************/
+
+#header {
+	margin-top: 20px;
+	margin-bottom: 80px;
+	display: block;
+	overflow: visible;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+.blog-title {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 70px;
+}
+
+.blog-title a {
+	border-bottom: none;
+}
+
+.blog-title img {
+	max-width: 100%;
+}
+
+.blog-description {
+	font-size: 16px;
+	line-height: 20px;
+	margin-top: 20px;
+}
+
+.links {
+	margin-top: 0px;
+	text-align: center;
+	float: none;
+	border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+}
+
+.links ul {
+	margin-top: 10px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	float: none;
+}
+
+.links li {
+	display: inline;
+	margin-left: 10px;
+	text-transform: none;
+}
+
+.links li:first-child {
+	margin-left: 0px;
+}
+
+
+
+/* Post wrappers
+********************************/
+
+#content {
+	width: 100%;
+	overflow-x: hidden;
+	clear: both;
+}
+
+.post {
+	margin-bottom: 45px;
+	padding-bottom: 40px;
+	width: 100%;
+}
+
+.narrow {
+	max-width: 640px;
+	margin: auto;
+}
+
+
+/* Headings
+********************************/
+
+.title h1, .link-title h1, .chat-title h1 {
+	text-align: center;
+	margin: auto;
+	margin-bottom: 25px;
+	font-size: 42px;
+	line-height: 50px;
+}
+
+.link-title a {
+	text-decoration: none;
+	position: relative;
+	border: none;
+	color: #529ECC;
+}
+
+span.link-arrow {
+	position: relative;
+	font-size: 20px;
+	bottom: 3px;
+}
+
+.quote-short {
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 25px;
+}
+
+.photo img, .album-art img, .videoWrapper {
+  max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border-radius: 2px;
+}
+
+.photo img, .album-art img, .videoWrapper img {
+	min-width: 640px;
+}
+
+.photoset-layout {
+    max-width: 700px;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.tumblr_audio_player {
+	height: 250px;
+}
+
+.audio iframe {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe, .videoWrapper object {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.videoWrapper iframe.flickr-embed-frame, .videoWrapper img {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Post body styles
+********************************/
+
+.caption p {
+	margin-bottom: 15px;
+}
+
+.caption h1 {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.caption h2 {
+	font-weight: bold;
+	margin-bottom: 15px;
+	font-size: 24px;
+}
+
+.caption blockquote {
+	margin-bottom: 10px;
+	border-left: 3px solid rgba(136, 136, 136, 0.2);
+	margin-left: 5px;
+	padding-left: 15px;
+	line-height: 26px;
+}
+
+.caption pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	background-color: rgba(136, 136, 136, 0.2);
+	border-radius: 2px;
+	padding: 10px 15px 10px 15px;
+	font-size: 15px;
+	line-height: 24px;
+	margin: 15px 0 25px 0;
+}
+
+.caption ul, ol {
+	margin-top: 0;
+	margin-bottom: 25px;
+	padding-left: 40px;
+}
+
+.caption img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto 30px auto;
+    border-radius: 2px;
+}
+
+.quote-short {
+	line-height: 40px;
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+
+.quote-medium, .quote-long {
+	line-height: 32px;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+ul.chat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.chat li {
+	border-bottom: 1px solid rgba(136, 136, 136, 0.3);
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.chat li:last-child {
+	border: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+span.odd, span.even  {
+	font-weight: bold;
+}
+
+.more a {
+	display: block;
+	width: 99%;
+	height: 30px;
+	border: 1px solid rgba(136, 136, 136, 0.3);
+	text-align: center;
+	text-decoration: none;
+	border-radius: 2px;
+	padding-top: 10px;
+	margin-bottom: 30px;
+}
+
+
+.more a:active {
+    background: rgba(136, 136, 136, 0.08);
+    box-shadow: inset 0px 1px 4px rgba(136, 136, 136, 0.2);
+    top: 0px;
+}
+
+.audio-module {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+a.mobile-player {
+	border: 1px solid rgba(136, 136, 136, 0.2);
+	background: rgba(136, 136, 136, 0.1);
+	width: 99%;
+	padding: 30px 0 30px 0;
+	margin-bottom: 25px;
+	border-radius: 2px;
+	display: none;
+}
+
+a.mobile-player:active {
+    top: 0px;
+    box-shadow: inset 0px 1px 4px rgba(136, 136, 136, 0.2);
+    background: rgba(136, 136, 136, 0.18);
+    border: 1px solid rgba(136, 136, 136, 0.3);
+}
+
+.play-triangle {
+	margin-left: 20px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 6.5px 0 6.5px 10px;
+	border-color: transparent transparent transparent rgba(136, 136, 136, 0.8);
+}
+
+.album-info {
+	display: block;
+	float: left;
+	width: 63%;
+}
+
+.player {
+	display: block;
+	background-color: #ffffff;
+	float: right;
+	padding-top: 5px;
+	padding-right: 2px;
+	border: 1px solid rgba(136, 136, 136, 0.3);
+}
+
+.desktop-spotify {
+	display: block;
+
+}
+
+.mobile-spotify {
+	display: none;
+	width: 290px;
+	margin: auto;
+}
+
+.iphone-video object {
+    display: block;
+    margin: 0px auto 20px;
+}
+
+.asker-block, .answer-text {
+	display: block;
+	overflow: auto;
+}
+
+p.question {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+p.album, p.question {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+h1.qa-letter {
+	display: block;
+	float: left;
+	width: 45px;
+	position: relative;
+	bottom: 3px;
+	font-size: 30px;
+}
+
+.q {
+	margin-bottom: 20px;
+}
+
+img.asker {
+	float:left;
+	margin-right: 8px;
+	border-radius: 2px;
+	position: relative;
+	top: 2px;
+}
+
+p.asker {
+	font-style: italic;
+}
+
+p.question {
+	clear: both;
+}
+
+
+/* Metadata
+********************************/
+
+.metadata {
+	border: 0px solid gray;
+	overflow: auto;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+
+.metadata a {
+	text-decoration: none;
+}
+
+.date, .tags, .notes-count {
+	display: block;
+	float: left;
+	margin-right: 15px;
+}
+
+.tags a, .notes-count a, .date a {
+	margin-right: 5px;
+}
+
+
+/* Footer
+********************************/
+
+#footer {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#footer a {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+a.back-next {
+    margin: 0px 10px 0px 10px;
+}
+
+#footer h2 {
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+
+#footer-links ul {
+	margin-bottom: 0px;
+	padding: 0;
+	display: block;
+	text-align: center;
+}
+
+#footer-links li {
+	display: inline;
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+#footer-links li:first-child {
+	margin-left: 0px;
+}
+
+#footer .colophon p {
+	font-size: 14px;
+	font-style: italic;
+}
+
+#footer p.promo {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+
+/* Notes and comments
+********************************/
+
+#permalink-content {
+	margin-top: 40px;
+}
+
+.avatar_frame {
+	position: relative;
+	top: 4px;
+	margin-right: 10px;
+}
+
+.comments {
+	margin-bottom: 35px;
+}
+
+.comments h3, .permalink-notes h3 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.permalink-notes ol {
+	padding-left: 0;
+}
+
+.permalink-notes li {
+	list-style: none;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(136, 136, 136, 0.3);
+	font-size: 13px;
+}
+
+.permalink-notes blockquote {
+	margin: 5px 0px 5px 0px;
+	border-left: 3px solid rgba(136, 136, 136, 0.2);
+	margin-left: 20px;
+	padding-left: 15px;
+    line-height: 24px;
+}
+
+.notes a {
+	border-bottom: none;
+	text-decoration: underline;
+}
+
+
+.post iframe, .post object {
+max-width: 100%;
+}
+
+
+/* Browser size break-points
+********************************/
+
+
+@media screen and (max-width: 800px) {
+
+#header {
+	margin-top: 20px;
+	display: block;
+	overflow: visible;
+	padding-bottom: 0px;
+}
+
+.blog-title {
+	display: block;
+	text-align: center;
+	margin-top: 50px;
+	float: none;
+	width: 100%;
+    margin-bottom: 50px;
+}
+
+.blog-title h1 {
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+.blog-description {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.links {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	float: none;
+	border-bottom: 1px solid rgba(136, 136, 136, 0.4);
+}
+
+.links ul {
+	margin-top: 10px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	float: none;
+}
+
+.links li {
+	display: inline;
+	margin-left: 16px;
+	font-size: 17px;
+	text-transform: none;
+}
+
+
+.metadata {
+	font-size: 16px;
+	}
+
+.player {
+	display: none;
+}
+
+a.mobile-player {
+	display: block;
+}
+
+.album-info {
+	width: 100%
+}
+
+.title h1, .link-title h1, .chat-title h1 {
+text-align: center;
+font-size: 36px;
+line-height: 42px;
+}
+
+}
+
+@media screen and (max-width: 740px) {
+
+#page {
+	padding-left:  1em;
+	padding-right: 1em;
+}
+
+#header {
+	margin-bottom: 50px;
+}
+
+/* WRANGLE TUMBLR VIDEO PLAYER */
+
+
+.iphone-video img {
+	width: 90%;
+}
+
+.iphone-video a {
+	margin-bottom: 20px;
+}
+
+/* IMAGES */
+
+.photo img, .album-art img, .videoWrapper img {
+	min-width: 100%;
+}
+
+.link-title a {
+	line-height: 50px;
+}
+
+.desktop-spotify {
+	display: none;
+}
+
+.mobile-spotify {
+	display: block;
+}
+
+}
+
+
+
+</style>
+
+<!-- End header -->
+
+    <link rel="alternate" href="android-app://com.tumblr/tumblr/x-callback-url/blog?blogName=sideprojectlife"><link rel="alternate" href="ios-app://305343404/tumblr/x-callback-url/blog?blogName=sideprojectlife"><script src="SideProject.life_files/tumblelog_post_message_queue.js"></script><link rel="stylesheet" type="text/css" href="SideProject.life_files/stylesheet.css"><link rel="stylesheet" type="text/css" href="SideProject.life_files/stylesheet_002.css"><!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995"><meta property="og:title" content="SideProject.life"><meta property="og:url" content="http://sideproject.life/?og=1"><meta property="og:description" content="Stay up to date learning all the techniques to growing sales with side projects."><meta property="og:type" content="tumblr-feed:tumblelog"><meta property="og:image" content="http://assets.tumblr.com/images/default_avatar/sphere_closed_128.png"><meta property="al:ios:url" content="tumblr://x-callback-url/blog?blogName=sideprojectlife"><meta property="al:ios:app_name" content="Tumblr"><meta property="al:ios:app_store_id" content="305343404"><meta property="al:android:url" content="tumblr://x-callback-url/blog?blogName=sideprojectlife"><meta property="al:android:app_name" content="Tumblr"><meta property="al:android:package" content="com.tumblr"><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:site" content="tumblr"><meta name="twitter:card" content="app"><meta name="twitter:description" content="sideprojectlife"><meta name="twitter:title" content="sideprojectlife"><meta name="twitter:app:name:iphone" content="Tumblr"><meta name="twitter:app:name:ipad" content="Tumblr"><meta name="twitter:app:name:googleplay" content="Tumblr"><meta name="twitter:app:id:iphone" content="305343404"><meta name="twitter:app:id:ipad" content="305343404"><meta name="twitter:app:id:googleplay" content="com.tumblr"><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=sideprojectlife&amp;referrer=twitter-cards"><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=sideprojectlife&amp;referrer=twitter-cards"><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=sideprojectlife&amp;referrer=twitter-cards"><!-- GOOGLE CAROUSEL --><script type="application/ld+json">
+	{"@type":"ItemList","url":"http:\/\/sideproject.life","itemListElement":[{"@type":"ListItem","position":1,"url":"http:\/\/sideproject.life\/post\/160285353335\/talk-on-side-project-marketing-for-entrefest"},{"@type":"ListItem","position":2,"url":"http:\/\/sideproject.life\/post\/160267663285\/examples-of-side-projects-built-by-others"},{"@type":"ListItem","position":3,"url":"http:\/\/sideproject.life\/post\/160267154510\/resources-for-building-side-projects"},{"@type":"ListItem","position":4,"url":"http:\/\/sideproject.life\/post\/160266285190\/how-to-think-of-ideas-for-side-projects"},{"@type":"ListItem","position":5,"url":"http:\/\/sideproject.life\/post\/160261832870\/further-reading"},{"@type":"ListItem","position":6,"url":"http:\/\/sideproject.life\/post\/160267441915\/receive-fresh-new-sideprojectlife-content-to-your"}],"@context":"http:\/\/schema.org"}</script><link rel="canonical" href="SideProject.life_files/a.html"><script async="" src="SideProject.life_files/showads.js"></script><style type="text/css">.knight-rider-loader{line-height:0;white-space:nowrap;width:78px}.knight-rider-loader.small{width:39px}.knight-rider-loader.centered{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.knight-rider-loader.h-centered{position:absolute;top:0;left:50%;transform:translateX(-50%)}.knight-rider-bar{display:none;width:20px;height:20px;margin:0 3px;border-radius:5px;opacity:.5;background-color:#d0d0d0}.small>.knight-rider-bar{width:10px;height:10px;margin-left:2px;margin-right:1px;border-radius:2px}.animate>.knight-rider-bar{display:inline-block;animation:knight-rider-oscillate ease-in-out .3s infinite alternate}.knight-rider-bar:first-child{animation-delay:-.2s}.knight-rider-bar:nth-child(2){animation-delay:-.1s}@keyframes knight-rider-oscillate{0%{opacity:.5;transform:scaleY(1)}to{opacity:1;transform:scaleY(1.4)}}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-pano-lightbox-container .tmblr-iframe--pano-lightbox{z-index:8675309;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;display:none}.tmblr-pano-lightbox-container .tmblr-iframe-preloader-container{z-index:8675310;position:fixed;bottom:0;width:100%;height:100%;background:rgba(0,0,0,.92)}.tmblr-pano-lightbox-container .tmblr-pano-lightbox{display:block}.tmblr-pano-lightbox-container .tmblr-pano-lightbox--preloading{display:none}.tmblr-iframe--controls-phone-container{padding-top:43px}.tmblr-iframe--controls-phone-container .t-logo{display:none}.tmblr-iframe--controls,.tmblr-iframe--mobile-logged-in-controls{position:fixed}.tmblr-iframe--controls.iframe-controls--desktop,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--desktop{top:0;right:0;width:40%;min-width:200px;height:36px;z-index:100}.tmblr-iframe--controls.iframe-controls--phone-mobile,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--phone-mobile{top:0;left:0;width:100%;height:44px;padding-right:8px;z-index:10}.tmblr-iframe--controls.iframe-controls--tablet-mobile,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--tablet-mobile{top:0;right:0;width:235px;height:36px;z-index:2147483646}.tmblr-iframe--desktop-logged-in-controls{position:fixed}.tmblr-iframe--desktop-logged-in-controls.iframe-controls--desktop{right:0;top:0;z-index:100}.tmblr-iframe--unified-controls{position:fixed;top:0;right:0;left:0;width:100%;height:0;z-index:100}.tmblr-iframe-compact .tmblr-iframe--unified-controls{left:auto}@media screen and (max-device-width:568px){.tmblr-iframe-overlay.tmblr-iframe-full-width .no-image:not(.avatar-hidden) #header{padding-top:140px}}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .top-blog-header .header-image.cover.loaded:after{display:none}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .tmblr-iframe--unified-controls{background-image:linear-gradient(180deg,rgba(0,0,0,.4) 0,transparent);padding-bottom:10px;transition:padding-bottom .1s linear}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .tmblr-iframe--unified-controls.tmblr-iframe--below-header{padding-bottom:0}.tmblr-iframe--follow-teaser{position:fixed;bottom:0;right:0;z-index:100;display:none}.tmblr-iframe--follow-teaser.open{display:block}.tmblr-iframe--follow-teaser.sticky-ad-visible{bottom:310px}@keyframes iframe-app-cta-transition{0%{opacity:0;bottom:-2em}to{opacity:1}}@keyframes iframe-app-cta-dismiss-transition{0%{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(2em)}}body.android,body.ios{padding-bottom:50px}.tmblr-iframe--app-cta-button{display:none;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--app-cta-button.tmblr-iframe--loaded{display:block;animation:iframe-app-cta-transition .2s ease-out}body.ios .tmblr-iframe--app-cta-button{bottom:30px}.tmblr-lightbox{position:fixed;top:0;bottom:0;left:0;right:0;z-index:8675309;overflow:hidden;background-color:hsla(0,0%,7%,.92)}.tmblr-lightbox .vignette{position:absolute;width:100%;height:100%;left:0;top:0;right:0;bottom:0;z-index:8675308;background-size:100% 100%}.tmblr-lightbox .lightbox-image-container{position:absolute;z-index:8675310;cursor:pointer}.tmblr-lightbox .lightbox-image-container.single-image{cursor:default}.tmblr-lightbox .lightbox-image{border-radius:3px;box-shadow:0 4px 30px #000;border-width:0;background-color:transparent}.tmblr-lightbox .lightbox-image.hide{display:none}.tmblr-lightbox .lightbox-image.placeholder{background-color:hsla(0,0%,100%,.05)}.tmblr-lightbox .lightbox-caption{position:absolute;text-align:center;font-family:Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;font-size:17px;font-weight:700;color:#fff;padding-top:20px;text-shadow:0 4px 30px #000;display:inline-block;text-rendering:optimizeLegibility}.tmblr-lightbox .lightbox-caption.hide{display:none}.hidden-body{position:relative;left:-99999px;overflow:hidden;background-color:#000}.hidden-body .show-mobile-lightbox{position:fixed;overflow:hidden;width:100%;top:0;left:0;right:0;bottom:0;z-index:8675309}.sticky-ad-wrapper{position:fixed;right:20px;bottom:-330px;border:1px solid #9da6af;border-radius:5px 0 0;background-color:#fff;z-index:100;transition:all .5s ease}.sticky-ad-wrapper .tmblr-iframe--sticky-ad{position:relative;margin-top:10px}.sticky-ad-wrapper.show{bottom:0}.sticky-ad-wrapper .ad-header{line-height:1;margin:5px;text-transform:uppercase;top:4px}.sticky-ad-wrapper .ad-footer,.sticky-ad-wrapper .ad-header{font-size:10px;text-align:center;color:#9da6af;position:relative}.sticky-ad-wrapper .ad-footer{bottom:12px;line-height:100%}.sticky-ad-wrapper .ad-footer a{color:#444;text-decoration:none;border-bottom:0}.sticky-darla-ad{position:fixed;bottom:-315px;right:20px;z-index:100;border-radius:5px 0 0;border:1px solid #9da6af;transition:all .5s ease;padding:10px}.sticky-darla-ad.show{bottom:0}.sticky-darla-ad .ad-close-btn{position:relative;font-weight:900;margin-left:auto;margin-right:-11px;margin-top:-26px;cursor:pointer;width:20px;height:15px;text-align:center;border-radius:5px 5px 0 0;font-size:12px;line-height:1.5;border-top:1px solid #9da6af;border-left:1px solid #9da6af;border-right:1px solid #9da6af}.sticky-darla-ad .ad-close-btn .icon-x{display:none;position:relative;font-size:12px;content:"\D7";color:#9da6af}.sticky-darla-ad .ad-footer{font-size:10px;line-height:1;text-align:center;color:#9da6af}.sticky-darla-ad .ad-footer a{color:#444;padding-left:5px;border-bottom:0;text-decoration:none}.sticky-darla-ad .ad-header{font-size:10px;line-height:1;text-align:center;margin:5px;text-transform:uppercase;color:#9da6af}.nu-optica-sticky-darla-ad{display:none;z-index:100;transition:all .5s ease}.nu-optica-sticky-darla-ad.show{display:block}.nu-optica-sticky-darla-ad.fixed{position:fixed;margin-top:0}.nu-optica-sticky-darla-ad.parked{position:absolute;margin-top:0}.nu-optica-sticky-darla-ad .ad-header{font-size:10px;text-align:center;margin:5px;text-transform:uppercase;color:#9da6af}.nu-optica-sticky-darla-ad .ad-footer,.nu-optica-sticky-darla-ad .ad-header{line-height:1;text-align:left;font-size:12px;font-weight:700}.nu-optica-sticky-darla-ad .ad-footer a{padding-left:5px;border-bottom:0;text-decoration:none}.nu-optica-sticky-darla-ad .ad-footer a:after{content:"\276F";padding-left:4px}.tmblr-iframe--init{width:0;height:0;opacity:0;z-index:-1;pointer-events:none}</style><script async="" src="SideProject.life_files/px_002.js"></script><style type="text/css">.live-photo {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .live-photo video,
+  .live-photo img {
+    display: block;
+    max-width: 100%;
+    pointer-events: none;
+    -ms-touch-action: none;
+        touch-action: none; }
+  .live-photo video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .live-photo video::-webkit-media-controls-start-playback-button {
+      display: none; }
+  .live-photo .live-photo-icon {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' fill='%23fff'%3E%3Ctitle%3ELive Photo%3C/title%3E%3Cg fill-rule='evenodd'%3E%3Cpath d='M24 36c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12zm0-2c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z'/%3E%3Cpath d='M24 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.788.63a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.462 1.85a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm3.831 2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2.94 3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.849 4.462a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm.63 4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-.63 4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.85 4.461a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.94 3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3.831 2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.462 1.849a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM24 44a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.788-.63a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.462-1.85a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3.831-2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.94-3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM6.13 30.288a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 25.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm.63-4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.85-4.462a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2.94-3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm3.831-2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.462-1.849a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/%3E%3C/g%3E%3C/svg%3E") center center;
+    background-size: contain;
+    -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+    pointer-events: none; }
+  .live-photo .live-photo-postroll,
+  .live-photo .live-photo-video {
+    opacity: 0; }
+  .live-photo .live-photo-video {
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  .live-photo .live-photo-keyframe,
+  .live-photo .live-photo-postroll,
+  .live-photo .live-photo-video {
+    will-change: transform, filter, opacity;
+    transition: opacity 0.5s linear, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s linear;
+    transition: transform 0.5s ease-out, filter 0.5s linear, opacity 0.5s linear;
+    transition: transform 0.5s ease-out, filter 0.5s linear, opacity 0.5s linear, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s linear; }
+  .live-photo.loading .live-photo-icon {
+    -webkit-animation: live-photo-icon-loading 0.5s linear alternate infinite both;
+            animation: live-photo-icon-loading 0.5s linear alternate infinite both; }
+  .live-photo.preview .live-photo-postroll {
+    opacity: 1;
+    transition-duration: 0s; }
+  .live-photo.active video,
+  .live-photo.active img {
+    -webkit-transform: scale(1.075, 1.075);
+        -ms-transform: scale(1.075, 1.075);
+            transform: scale(1.075, 1.075); }
+  .live-photo.active .live-photo-postroll {
+    -webkit-animation: live-photo-post-roll 1s both;
+            animation: live-photo-post-roll 1s both; }
+  .live-photo.active .live-photo-video {
+    opacity: 1;
+    -webkit-filter: none;
+            filter: none;
+    transition-delay: 0.375s;
+    transition-duration: 0.625s; }
+
+@-webkit-keyframes live-photo-icon-loading {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.75; } }
+
+@keyframes live-photo-icon-loading {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.75; } }
+
+@-webkit-keyframes live-photo-post-roll {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  2% {
+    opacity: 1; }
+  37.5% {
+    opacity: 1;
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  100% {
+    opacity: 0; } }
+
+@keyframes live-photo-post-roll {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  2% {
+    opacity: 1; }
+  37.5% {
+    opacity: 1;
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  100% {
+    opacity: 0; } }
+</style><script async="" src="SideProject.life_files/px.js"></script><style type="text/css">.tmblr-iframe--unified-controls{height:54px}.tmblr-iframe-compact .tmblr-iframe--unified-controls{width:308px}.tmblr-iframe-pushdown{padding-top:54px}</style></head>
+
+	<body class="tmblr-iframe-overlay tmblr-iframe-themed tmblr-iframe-compact"><iframe src="about:blank" scrolling="no" name="unified-controls" class="tmblr-iframe tmblr-iframe--unified-controls tmblr-iframe--loaded iframe-controls--desktop" width="308" height="54" frameborder="0"></iframe><div class="ui_dialog_lock" style="display: none;"></div>
+
+		<div id="page">
+
+			<div id="header">
+
+                
+
+
+
+				<div class="blog-title">
+
+                    
+
+                    
+                    <h1><a href="http://sideproject.life/">SideProject.life</a></h1>
+                    
+
+                    
+					<p class="blog-description">Stay up to date learning all the techniques to growing sales with side projects.</p>
+                    
+				</div>
+
+
+
+			</div> <!-- header end -->
+
+			<div id="content">
+            
+
+
+                
+
+				
+
+
+                
+
+
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+				<!-- VIDEO POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post video">
+
+					<div class="wide">
+
+                        <div class="videoWrapper">
+						    <iframe id="youtube_iframe" src="SideProject.life_files/UX_kRelOmf0.html" gesture="media" allow="encrypted-media" allowfullscreen="" width="700" height="394" frameborder="0"></iframe>
+                        </div>
+
+					</div>
+
+					<div class="narrow">
+
+                        
+						<div class="caption">
+
+							<p>Talk on Side Project marketing for EntreFEST 2017.</p><p>Covers the “What”, “Why”, “How”, “Who” of Side Project marketing along with an FAQ.</p><p>Peace and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=YzBiODk4OThhN2UyZGMzYTIxZjM0YTdmYmYyY2EzM2FhZTI3NzYxMSxjMDA3SHJWZA%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160285353335%2Ftalk-on-side-project-marketing-for-entrefest&amp;m=1">Levi</a></p>
+
+						</div>
+                        
+
+						<div class="metadata">
+
+							
+                        	<div class="date">
+								<a href="http://sideproject.life/post/160285353335/talk-on-side-project-marketing-for-entrefest">May. 3 2017</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- narrow end -->
+
+				</div> <!-- post end -->
+                
+
+
+
+				
+
+            
+
+
+                
+                <!-- TEXT POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post text">
+
+					<div class="narrow">
+
+                        
+						<div class="title">
+							<h1>Examples of side projects built by others.</h1>
+						</div>
+                        
+
+						<div class="caption">
+
+						<ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Funsplash.com%2F&amp;t=YWUyZDQ4NWVhZWNiZmI4ZmY4YTAzZDMzYjg4MDRlNWY0ZjM1ZDQzYixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Unsplash.com</a> Built by <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2F&amp;t=Y2QzYjA4ZWEzYjdjZWViMTVmNDA2NWVhOTFkMjA3MTM1MTUzMjU0ZixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Crew.co</a>.</li></ul><p>Crew
+ builds websites. They had a hard time finding quality stock images 
+online for building websites. So, they created this resource.</p><p>Unsplash is now it’s own company. Yeah, it’s a very popular site now.</p><ul><li><p><a href="http://t.umblr.com/redirect?z=http%3A%2F%2Fhowmuchtomake.com%2F&amp;t=MTkxNTUzMjMwODliMDQzMThhYTEwYmRkNDZkNTM2OTFlNWI1ODRkYixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">How much to make</a> Built by <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2F&amp;t=Y2QzYjA4ZWEzYjdjZWViMTVmNDA2NWVhOTFkMjA3MTM1MTUzMjU0ZixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Crew.co</a>.
+ 
+Crew builds websites, designs mobile apps, and designs logos. They built
+ this resource to drive leads to the Crew.co website and to also give 
+expectations to future customers of the costs associated with building 
+these projects.</p></li><li><p><a href="http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.gomoodboard.com%2F&amp;t=ZmRjNjIwOTlmYWE0YWFhYzBmMjY2ODQ4ZTIzYzRkZjViZmU4ZmE4OCxHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Moodboard</a> Built by <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2F&amp;t=Y2QzYjA4ZWEzYjdjZWViMTVmNDA2NWVhOTFkMjA3MTM1MTUzMjU0ZixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Crew.co</a>.</p></li></ul><p>People
+ can come in, record all their ideas for how they want their website to 
+look, then drive a lead into Crew.co to building that website for them.</p><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2Fhow-to-build-an-online-business%2F&amp;t=MzZhOTQwZWIxZGRjYjAwOWVmYWM5MTBkZjg5ZWU0Nzg3YTliZjhkMyxHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">How to build an online business</a> Built by <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2F&amp;t=Y2QzYjA4ZWEzYjdjZWViMTVmNDA2NWVhOTFkMjA3MTM1MTUzMjU0ZixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Crew.co</a>.</li></ul><p>Online
+ course for entrepreneurs to learn how to sell online. Drives leads into
+ Crew.co to build websites for these online businesses.</p><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.git-tower.com%2Flearn%2Fwebsite-optimization&amp;t=NWE0NDBhNjUwOTI0MjRlZDA5N2VkY2U3OTBhODMyNGI5NzE0YjJiZixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">The Beginner’s Guide to Faster Websites</a> Built by <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.git-tower.com%2Fmac%2F&amp;t=ZWIyM2E4NjllNjdiM2I0ZTc0OGM2YmI1YTJhODRiNjlhNzk4MWEyYyxHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Git Tower</a>.</li></ul><p>Git
+ Tower is a tool for software/web developers. What is a problem that 
+these people have? They build websites, but they may not know how to 
+make them fast. Git Tower created an eBook telling you how to create 
+fast websites and leading these devs to the Git Tower software.</p><hr><p>There are <strong>tons</strong>
+ more of these example projects around. Please, share your ideas with me
+ and I will add them to this list. Contact me on the bottom of <a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZmQ5YWEwY2RiMTY5MDM3ZmU1MzkzYTEwNWYyMGQ5MGQ2NTdjOGYwYixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">my site</a> or message me on <a href="https://twitter.com/levibostian">Twitter</a> and I will add it to the list.</p><p>Peace and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZmQ5YWEwY2RiMTY5MDM3ZmU1MzkzYTEwNWYyMGQ5MGQ2NTdjOGYwYixHbFR0WURYNw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267663285%2Fexamples-of-side-projects-built-by-others&amp;m=1">Levi</a></p>
+
+						</div> <!-- End caption -->
+
+                        
+
+						<div class="metadata">
+
+                            
+        					<div class="date">
+								<a href="http://sideproject.life/post/160267663285/examples-of-side-projects-built-by-others">May. 3 2017</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- text end -->
+
+				</div> <!-- post end -->
+                
+
+				
+
+
+                
+
+
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+
+
+
+				
+
+            
+
+
+                
+                <!-- TEXT POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post text">
+
+					<div class="narrow">
+
+                        
+						<div class="title">
+							<h1>Resources for building side projects.</h1>
+						</div>
+                        
+
+						<div class="caption">
+
+						<p>After you have an idea for what to build, it’s time to actually build it.</p><p>We
+ are very lucky because today it has never been easier to build side 
+projects. It is highly recommended to leverage existing products out 
+there to help build your side project. You will get it out sooner and 
+will be able to maintain it much easier.</p><h1>Build a website</h1><ul><li><a href="https://tumblr.com/">Tumblr</a>
+ Unsplash.com was built in 3 hours and $19 to handle over 1 million 
+visitors to the site. That is also what this site is built on!</li><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.squarespace.com%2F&amp;t=MGIzYjZjYzc0YWEwMjk3MWY2MDM5NTIzNzk1YWYyOGExZGVkOGFiMCxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">SquareSpace</a> I have personally never used SquareSpace but I do know it’s an option for others to creating a website.</li></ul><h1>Create a newsletter</h1><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fmailchimp.com%2F&amp;t=YWY3MzYwODdjMjcwMTY3MGU0MTdmNWU5ZmE0ZDE1ODhkY2E3YzA3ZSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Mailchimp</a> Great newsletter service. Free to start, easy to use, powerful for all your needs. Send drip campaigns, schedule emails.</li><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.getrevue.co%2F&amp;t=M2E0M2E5YzIwZjVmMDgzNzYzM2UzZmJkM2UzYzQ1MjY2MWMwYmVkMSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Revue</a> Never used this myself. It is good for users who are looking to share online articles with users.</li></ul><h1>Online store for digital or physical products</h1><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fgumroad.com%2F&amp;t=ZGJkNTk5NThhYTczMjE4MTY4MGU3NzZjZjM2ZjE5ZTZiN2VlOGQ0OCxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Gumroad</a> Awesome service. Affordable, quick to get going, sell digital or physical goods.</li></ul><h1>Launch online course</h1><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fwww.withcoach.com%2F&amp;t=MzAzYmRmNmYwNTIxYzk5MmQ4MjJiNWJjYThhY2VhOTAzYmFkNjQ4NyxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Coach</a>
+ This is what I personally use to launch online courses. Awesome service
+ that does everything you need, create newsletters, drip campaigns, 
+hosts all your content.</li><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fteachable.com%2F&amp;t=ZjRkNDdkNjc2YWQwNGMwMzljZmM3MmVmYTc1ZjZkN2FmYTk5MjE0MCxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Teachable</a> I have never used this myself. I hear it’s a good resource, however.</li></ul><h1>Blog</h1><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fmedium.com%2F&amp;t=MzQ2ZWJjNzE3YTlmOTJmN2EyMDQ3OWFkNzJiMDY1MGY0ZWM1MDg3ZSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Medium</a>
+ Free, quick, easy, big community of readers. Medium is very popular 
+today with publishing blog contenet. I highly recommend checking it out.</li><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fghost.org&amp;t=NGY0MGRmNjNhYjg0MjEzN2FlYTIwZTNlMWRjYzA5MzIwM2JhMmZjNixIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Ghost</a> My favorite blogging platform. I use Ghost for <a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com%2Fblog&amp;t=MjcwMjZhZjRmYzgxMTQxYzcwMmI2Y2Y2MzRmYTFhMGY3Mzk1N2YxYSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">my personal blog</a> and also post to <a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fmedium.com%2F%40levibostian&amp;t=MjZhYTE1MmRkOTI1NGQ3OTg4ODU2MjQxN2RlNGIzMDYxN2YyYjFlMCxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Medium</a> as well. Open source, collaborate with your team.</li></ul><h1>Podcast</h1><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fsimplecast.com%2F&amp;t=Y2E5NWM1NTU4NjcxYTZiOTlkOWQwYWI2NzMwMzEzZjU0OGJiMzhmMixIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Simplecast</a> This is what I personally use for <a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flifeoflevi.xyz%2F&amp;t=YmE5ZDlkZDlkZGI5OGNhOThhZWVlZjUyMjdiZTIyZjlkM2UwNzI4NSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">my podcast</a>.
+ Creates a website for you, hosts all your episodes, helps you to get it
+ on iTunes, Google Play, Stitcher. Great service I highly recommend.</li></ul><hr><p>This is <em>not</em>
+ all of the resources out there for you. Please, share your ideas with 
+me and I will add them to this list. Contact me on the bottom of <a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZWQyODI3MWU1N2NmOTQ2MDFlNmFlMWIzYzNhZWIwMmMyZWEwNmNhMSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">my site</a> or message me on <a href="https://twitter.com/levibostian">Twitter</a> and I will add it to the list.</p><p>Peace and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZWQyODI3MWU1N2NmOTQ2MDFlNmFlMWIzYzNhZWIwMmMyZWEwNmNhMSxIVFB4WDdUaw%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267154510%2Fresources-for-building-side-projects&amp;m=1">Levi</a></p>
+
+						</div> <!-- End caption -->
+
+                        
+
+						<div class="metadata">
+
+                            
+        					<div class="date">
+								<a href="http://sideproject.life/post/160267154510/resources-for-building-side-projects">May. 3 2017</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- text end -->
+
+				</div> <!-- post end -->
+                
+
+				
+
+
+                
+
+
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+
+
+
+				
+
+            
+
+
+                
+                <!-- TEXT POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post text">
+
+					<div class="narrow">
+
+                        
+						<div class="title">
+							<h1>How to think of ideas for side projects.</h1>
+						</div>
+                        
+
+						<div class="caption">
+
+						<p>To think of side projects to build, you need to first know your
+ customer. If you have a brand new product that just released and you 
+are not very sure about who your customer is, this is a challenging step
+ for you. You may not be as successful with your side project at this 
+point. It may still be worth a try, but keep in mind you may be 
+attracting the wrong audience.</p><p>When thinking of ideas for side projects, <strong>You need to be your customer. Get in their head. What problems do they have?</strong> From the minute they wake up until they go to bed. What problems do they have in their life that you want to solve?</p><hr><p>There are 4 different methods that I use to think of side project ideas.</p><ol><li>Do I have knowledge to share?</li><li>Can I reuse what is already built?</li><li>Can I build an audience?</li><li>Do you have problems internally?</li></ol><p>Let’s go into these a little more.</p><h1>Do I have knowledge to share?</h1><p>I
+ can guarantee that each and every one of you have knowledge in your 
+head that someone else would find useful. What skill have you learned 
+how to do it? What life experiences have you had recently that someone 
+has already dreamed of doing?</p><p>With this knowledge, create eBooks, 
+online video courses, webinars, YouTube videos, blog series sharing this
+ knowledge with others.</p><p><strong>Jason Fried</strong>, the CEO of 
+Basecamp, takes advantage of this. The company Basecamp is a small 
+business that serves hundreds of thousands of paying customers a day. 
+They like to go against the “startup scene” of getting billion dollar 
+investments and trying to create the next unicorn. They were remote 
+before remote was cool. Jason writes every single day about life in the 
+business world. The books they have developed as a company are extremely
+ well done and brings many new ideas to the business world.</p><p><strong>Justin Jackson</strong>, justinjackson.ca, is a solopreneur. He is <em>very</em>
+ good about sharing knowledge he has. Whenever he learns anything new, 
+he shares it. Creates an eBook, an online video course. In fact, he 
+created his first online course late last year and then after he was 
+done doing that, he created a video course on how to create video 
+courses!</p><h1>Can I reuse what is already built?</h1><p>You have spent
+ a ton of effort building your core product at your business. Your blood
+ and sweat has been put into this product. This big product that you 
+have built more then likely has solved <em>many</em> problems inside of it.</p><p>Do
+ you think you could break apart your main core product of your business
+ to sell small pieces of it by themselves? Could you take your main code
+ base and open source some parts of it? Could you take your product and 
+reuse it for another purpose?</p><p>Is there an opportuntity out there 
+to license your product? This awesome core product you built, does 
+someone else find it useful somehow you can license out to?</p><p><strong>Nomadlist.com</strong>,
+ a website for digital nomads to find great places around the world to 
+work and live. Levels.io, the founder of Nomadlist, is really good at 
+this. He built Nomadlist from scratch himself. When the Brexit situation
+ was going on, Levels released a new product, Escape the Brexit. When 
+Trump got elected in the United States, he launched, Escape the Trump. 2
+ new websites that takes existing data from NomadList of awesome places 
+to live and launched 2 new products that got lots of attention and 
+essentially relaunched NomadList a couple times.</p><p><strong>Your Circle</strong>,
+ a virtual support group mobile app I am the founder of. Your Circle is a
+ mobile app specifically for cancer patients and their families, but I 
+am talking to organizations with adoption and low income high schoolers 
+wanting to go to college to see if they can license the tech to them. 
+These are others who find the technology that is built for cancer 
+patients to be useful for them as well.</p><h1>Can I build an audience?</h1><p>As you build this core product of yours, do you have an opportunity to grow a community? Grow an audience?</p><p>You can launch a forum online community, a newsletter, a podcast, a new blog all about starting conversations.</p><p><strong>Justin Jackson</strong>,
+ justinjackson.ca, is a solopreneur. I bring Justin up again because he 
+is also very good at this. He has a community of solopreneurs together 
+to chat about products and business together. He has a newsletter he 
+shares stories about his experiences with. He has a podcast to companion
+ his blog.</p><p>January of 2016, Justin decided he was going to make 
+100 things in 2016. He called it the 2016 Maker Challenge. He could have
+ easily created this in his basement on his own and made some tweets 
+about it every few days about progress. However, Justin created a 
+newsletter inviting others to also build 100 things in 2016. This is 
+actually how I found out about Justin. From others sharing things they 
+are making and referring back to this challenge Justin created.</p><p><strong>Jason Fried</strong>,
+ the CEO of Basecamp, to mention him again as well. As I said before, 
+Basecamp is loud and proud of their business. They love being different.
+ Jason, through his writing and talking, has built an audience of 
+companies who want to go against the norm of the corporate business we 
+are all used to. Not having meetings. Being remote. Not hiring like 
+crazy to grow. He shares this mindset and gets others excited about his 
+ideas and in turn, they join the Basecamp product.</p><h1>Do I have problems internally?</h1><p>Do
+ you have issues as a team working together? Is there a unique way about
+ the way you work you can blog about? What are the problems you as a 
+company are facing you can fix (aka: scratching your own itch).</p><p><strong>Crew.co</strong>,
+ a marketplace for freelance designers. Crew builds websites. While 
+building websites, they were having a hard time finding good quality 
+stock photography. So, they launched Unsplash.com. Believe me, Crew and 
+the rest of the world doesn’t have a very big problem with finding stock
+ photos anymore.</p><p><strong>37 Signals</strong>, a design consulting 
+business. 37 Signals started in 1999 in Chicago. As they worked with 
+clients, they had issues together on managing projects. Managing 
+clients. Managing their team. So, they scratched their own itch by 
+building side projects to solve these problems of theirs. Then, after 
+using them internally, they started to sell these products on the side. 
+Then, a few years later, they quit 37 Signals and started Basecamp. Yes.
+ Basecamp originated as a side project in a consulting business.</p><p>Peace and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZDNkNTNjM2UxZDdkMTFmN2JhYjk0NGZiNzQwYWY2YjYwYjExNWNhYyxQVDV1M04yMQ%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160266285190%2Fhow-to-think-of-ideas-for-side-projects&amp;m=1">Levi</a></p>
+
+						</div> <!-- End caption -->
+
+                        
+
+						<div class="metadata">
+
+                            
+        					<div class="date">
+								<a href="http://sideproject.life/post/160266285190/how-to-think-of-ideas-for-side-projects">May. 3 2002</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- text end -->
+
+				</div> <!-- post end -->
+                
+
+				
+
+
+                
+
+
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+
+
+
+				
+
+            
+
+
+                
+                <!-- TEXT POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post text">
+
+					<div class="narrow">
+
+                        
+						<div class="title">
+							<h1>Further reading</h1>
+						</div>
+                        
+
+						<div class="caption">
+
+						<p>Blog posts:</p><ul><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcrew.co%2Fblog%2Fhow-side-projects-saved-our-startup%2F&amp;t=NDBiODMyODI3ZmU1MWMxMGJlZjNlMTMwZmQ4MjQ4YzJlZjkyYzRjYyxoVzJEMEk2Mg%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160261832870%2Ffurther-reading&amp;m=1">How side projects saved our startup</a></li><li><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fmedium.com%2Fswlh%2Fside-product-marketing-is-the-new-king-a75c4ed0c0c5&amp;t=NTU1ZTg3ZTllYjE3ZDJhM2U1NzIzYzgwNDdhNWIxMDFmODViZmM0MSxoVzJEMEk2Mg%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160261832870%2Ffurther-reading&amp;m=1">Side Project Marketing Is the New King</a></li></ul><p>Peach and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=ZTI0MGUwNzNjZTU4MDhjZDRjMWJjN2ZhOTFmM2JjZjZmNDg0MzJhZixoVzJEMEk2Mg%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160261832870%2Ffurther-reading&amp;m=1">Levi</a></p>
+
+						</div> <!-- End caption -->
+
+                        
+
+						<div class="metadata">
+
+                            
+        					<div class="date">
+								<a href="http://sideproject.life/post/160261832870/further-reading">May. 3 2001</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- text end -->
+
+				</div> <!-- post end -->
+                
+
+				
+
+
+                
+
+
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+
+
+
+				
+
+            
+
+
+                
+
+				
+
+
+                
+
+
+				
+				<!-- LINK POST
+				///////////////////////////////////////////////////////-->
+
+				<div class="post link">
+
+					<div class="narrow">
+
+						<div class="link-title">
+
+							<h1><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcoaching.levibostian.com%2Fsideproject-life-newsletter&amp;t=ZDRjZDc4MTZmOTRhMjY1OTZhNDgxYmY3MjRkY2FlZmZiMjQ5MTMyNixuaXpXRXRyWQ%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267441915%2Freceive-fresh-new-sideprojectlife-content-to-your&amp;m=1">Receive fresh new SideProject.life content to your inbox. <span class="link-arrow">➔</span></a></h1>
+
+						</div>
+
+                        
+						<div class="caption">
+							 <p>Stay up to date with SideProject.life with all the updates to content, videos, stories, resources, experiments, etc.</p><p>Updates not super frequent. No spam, ever. Unsubscribe anytime.</p><p><a href="http://t.umblr.com/redirect?z=https%3A%2F%2Fcoaching.levibostian.com%2Fsideproject-life-newsletter&amp;t=ZDRjZDc4MTZmOTRhMjY1OTZhNDgxYmY3MjRkY2FlZmZiMjQ5MTMyNixuaXpXRXRyWQ%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267441915%2Freceive-fresh-new-sideprojectlife-content-to-your&amp;m=1">Join here</a></p><p>Peace and love, 
+<a href="http://t.umblr.com/redirect?z=http%3A%2F%2Flevibostian.com&amp;t=MTA3MzdmNTcxMDRhZTM2M2NjYTU2MzAzZGRlZGNmZTUyOGU3MTJjNSxuaXpXRXRyWQ%3D%3D&amp;b=t%3AD_qB6tMbtN8B-hjz7PeXjg&amp;p=http%3A%2F%2Fsideproject.life%2Fpost%2F160267441915%2Freceive-fresh-new-sideprojectlife-content-to-your&amp;m=1">Levi</a></p>
+						</div>
+                        
+
+						<div class="metadata">
+
+							
+        					<div class="date">
+								<a href="http://sideproject.life/post/160267441915/receive-fresh-new-sideprojectlife-content-to-your">May. 3 2000</a>
+							</div>
+                            
+
+                            
+
+                            
+							
+						    
+
+                            
+
+						</div> <!-- metadata end -->
+
+					</div> <!-- narrow end -->
+
+				</div> <!-- post end -->
+				
+
+
+				
+
+
+                
+
+
+
+				
+
+
+
+		        
+
+
+
+				
+
+            
+
+            
+
+			</div> <!-- content end -->
+
+			<div id="footer">
+
+
+                
+
+
+				<div id="footer-links">
+
+						<ul>
+							<li><a href="http://sideproject.life/">Home</a></li>
+                            
+                            
+    					    <li><a href="http://sideproject.life/ask">Ask me anything</a></li>
+						    
+                            
+                            <li><a href="http://sideproject.life/archive">Archive</a></li>
+					</ul>
+				</div>
+
+				<div class="colophon">
+
+                    
+
+					<p class="promo"><a href="http://zacksultan.com/">Observer theme by Zack Sultan</a></p>
+
+				</div>
+
+			</div><!-- content end -->
+
+		</div> <!-- page end -->
+
+
+<iframe scrolling="no" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target" src="SideProject.life_files/analytics.html" width="1" height="1" frameborder="0"></iframe><script type="text/javascript">
+    (function(){
+        var analytics_frame = document.getElementById('ga_target');
+        var analytics_iframe_loaded;
+        var user_logged_in;
+        var blog_is_nsfw = 'No';
+        var addthis_enabled = false;
+
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent,function(e) {
+            var message = (e.data && e.data.split) ? e.data.split(';') : '';
+            switch (message[0]) {
+                case 'analytics_iframe_loaded':
+                    analytics_iframe_loaded = true;
+                    postCSMessage();
+                    postGAMessage();
+                    postATMessage();
+                    postRapidMessage();
+                    break;
+                case 'user_logged_in':
+                    user_logged_in = message[1];
+                    postGAMessage();
+                    postATMessage();
+                    break;
+            }
+        }, false);
+
+        analytics_frame.src = "https://assets.tumblr.com/analytics.html?a76144f6ac3f4c5ec0b80b2f2a5b4fd0#" +
+                              "http://sideproject.life";
+        function postGAMessage() {
+            if (analytics_iframe_loaded && user_logged_in) {
+                var is_ajax = false;
+                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/?route=%2F'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+        function postCSMessage() {
+            COMSCORE = true;
+            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
+        }
+        function postATMessage() {
+            if (addthis_enabled && analytics_iframe_loaded) {
+                analytics_frame.contentWindow.postMessage('enable_addthis', analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+        function postRapidMessage() {
+                            if (analytics_iframe_loaded) {
+                    var is_ajax = '';
+                    var route = '/';
+                    var tumblelog_id = '345836450';
+                    var yahoo_space_id = '1197719229';
+                    var rapid_client_only = '1';
+                    var apv = '1';
+                    var rapid_ex = '';
+
+                    analytics_frame.contentWindow.postMessage(
+                        [
+                            'tick_rapid', is_ajax, route, user_logged_in, tumblelog_id,
+                            yahoo_space_id, rapid_client_only, apv, rapid_ex
+                        ].join(';'),
+                        analytics_frame.src.split('/analytics.html')[0]
+                    );
+                }
+                    }
+    })();
+</script><script type="text/javascript">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1515511695&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvc2lkZXByb2plY3QubGlmZVwvIiwicmVxdHlwZSI6MCwicm91dGUiOiJcLyJ9&U=KKFOLIJBHP&K=4af1ba9501eccfe2da2b988dca25d7891edea4bf2310d7d2289cfe3f5c94bb6d&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1515511695&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvc2lkZXByb2plY3QubGlmZVwvIiwicmVxdHlwZSI6MCwicm91dGUiOiJcLyIsIm5vc2NyaXB0IjoxfQ==&U=KKFOLIJBHP&K=4ec03566d182073a72786eaae327755d259a7354af7208a95f0cc461794b7b03&R="></noscript><script>
+        (function (w,d) {
+            'use strict';
+            var l = function(el, type, listener, useCapture) {
+                el.addEventListener ?
+                el.addEventListener(type, listener, !!useCapture) :
+                el.attachEvent && el.attachEvent('on' + type, listener, !!useCapture);
+            };
+            var a = function () {
+                                if (d.getElementById('tumblr-cdx')) {
+                    return;
+                }
+                var s = d.createElement('script');
+                var el = d.getElementsByTagName('script')[0];
+                s.async = true;
+                s.src = 'http://assets.tumblr.com/assets/scripts/vendor/cedexis/1-13960-radar10.min.js?_v=1c33ba57efaa7c45a6d00094f876fe73';
+                s.type = 'text/javascript';
+                s.id = 'tumblr-cdx';
+                d.body.appendChild(s);
+            };
+            l(w,'load',a);
+        }(window, document));
+</script><script type="text/javascript">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1515511695&J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6XC9cL3NpZGVwcm9qZWN0LmxpZmVcLyIsInJlcXR5cGUiOjAsInJvdXRlIjoiXC8iLCJwb3N0cyI6W3sicG9zdGlkIjoiMTYwMjg1MzUzMzM1IiwiYmxvZ2lkIjoiMzQ1ODM2NDUwIiwic291cmNlIjozM30seyJwb3N0aWQiOiIxNjAyNjc2NjMyODUiLCJibG9naWQiOiIzNDU4MzY0NTAiLCJzb3VyY2UiOjMzfSx7InBvc3RpZCI6IjE2MDI2NzE1NDUxMCIsImJsb2dpZCI6IjM0NTgzNjQ1MCIsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiMTYwMjY2Mjg1MTkwIiwiYmxvZ2lkIjoiMzQ1ODM2NDUwIiwic291cmNlIjozM30seyJwb3N0aWQiOiIxNjAyNjE4MzI4NzAiLCJibG9naWQiOiIzNDU4MzY0NTAiLCJzb3VyY2UiOjMzfSx7InBvc3RpZCI6IjE2MDI2NzQ0MTkxNSIsImJsb2dpZCI6IjM0NTgzNjQ1MCIsInNvdXJjZSI6MzN9XX0=&U=OGIEANGGIB&K=3118ef7f2f129ec1578db121179bc0ab9c2a73b16030559a17c4d1d7f50c4050&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1515511695&J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6XC9cL3NpZGVwcm9qZWN0LmxpZmVcLyIsInJlcXR5cGUiOjAsInJvdXRlIjoiXC8iLCJwb3N0cyI6W3sicG9zdGlkIjoiMTYwMjg1MzUzMzM1IiwiYmxvZ2lkIjoiMzQ1ODM2NDUwIiwic291cmNlIjozM30seyJwb3N0aWQiOiIxNjAyNjc2NjMyODUiLCJibG9naWQiOiIzNDU4MzY0NTAiLCJzb3VyY2UiOjMzfSx7InBvc3RpZCI6IjE2MDI2NzE1NDUxMCIsImJsb2dpZCI6IjM0NTgzNjQ1MCIsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiMTYwMjY2Mjg1MTkwIiwiYmxvZ2lkIjoiMzQ1ODM2NDUwIiwic291cmNlIjozM30seyJwb3N0aWQiOiIxNjAyNjE4MzI4NzAiLCJibG9naWQiOiIzNDU4MzY0NTAiLCJzb3VyY2UiOjMzfSx7InBvc3RpZCI6IjE2MDI2NzQ0MTkxNSIsImJsb2dpZCI6IjM0NTgzNjQ1MCIsInNvdXJjZSI6MzN9XSwibm9zY3JpcHQiOjF9&U=OGIEANGGIB&K=143ca62a58782eea5c335daeb59c20a5a39c64bb2877fa3462badf5e789d948a&R="></noscript><script src="SideProject.life_files/index.js"></script>
+
+
+<script async="" src="SideProject.life_files/1-13960-radar10.js" type="text/javascript" id="tumblr-cdx"></script></body></html>
