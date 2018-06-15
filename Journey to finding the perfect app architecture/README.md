@@ -2,6 +2,8 @@
 
 I have not given this talk yet, but I hope to. I have been extremely excited about this topic for the past ~6 months now :)
 
+**Update:** After being rejected for 4 conferences, I have decided to ditch this topic and redefine it. I have received amazing feedback from conference organizers on my submission saying that, "There is no such thing as perfect" and "This topic is covering too much at one talk". This talk has been rewritten to become, *Build an offline-first Android app today!*.
+
 # Abstract
 
 When it comes to mobile apps, I think we can all agree apps should be fast, fun, and easy to use. They should *just work*.

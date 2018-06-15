@@ -20,7 +20,9 @@ For each of the my submissions, the filename determines that state of this talk 
 
 ## 2018
 
-[Journey to finding the perfect app architecture](https://github.com/levibostian/talks/blob/master/%5B-%5D%20Journey%20to%20finding%20the%20perfect%20app%20architecture/README.md) <--- Have not given it yet. :fingers_crossed:
+[Build an offline-first Android app today!](https://github.com/levibostian/talks/blob/master/Build%20an%20offline-first%20Android%20app%20today!/README.md) <--- This is my current talk I am submitting and hoping to present.
+
+[Journey to finding the perfect app architecture](https://github.com/levibostian/talks/blob/master/%5B-%5D%20Journey%20to%20finding%20the%20perfect%20app%20architecture/README.md) <--- This talk has been cancelled. The topic ended up being too large and I have decided to break it up into many smaller talks.
 
 ## 2017
 
