@@ -18,6 +18,10 @@ For each of the my submissions, the filename determines that state of this talk 
 
 # The talks
 
+## 2019
+
+[Build an offline-first Android app today!](https://github.com/levibostian/talks/blob/master/Build%20an%20offline-first%20Android%20app%20today!/README.md) <--- This talk I submitted once in 2018 and got rejected. I am continuing to submit this talk for the 2019 year. 
+
 ## 2018
 
 [Build an offline-first Android app today!](https://github.com/levibostian/talks/blob/master/Build%20an%20offline-first%20Android%20app%20today!/README.md) <--- This is my current talk I am submitting and hoping to present.
