@@ -20,7 +20,7 @@ For each of the my submissions, the filename determines that state of this talk 
 
 ## 2019
 
-[Build an offline-first Android app today!](https://github.com/levibostian/talks/blob/master/Build%20an%20offline-first%20Android%20app%20today!/README.md) <--- This talk I submitted once in 2018 and got rejected. I am continuing to submit this talk for the 2019 year. 
+[Loading screens suck!](https://github.com/levibostian/talks/blob/master/Loading%20screens%20suck!/README.md) <--- Newly edited version of the *Build an offline-first Android app today!* talk I submitted in 2018. 
 
 ## 2018
 
